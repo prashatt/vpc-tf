@@ -23,6 +23,9 @@ resource "aws_route_table_association" "public" {
 resource "aws_route_table" "private" {
   count  = length(var.private_subnet_cidrs)
   vpc_id = aws_vpc.test_vpc.id
+  tags = {
+    Name = "rtbl_private_${count.index}"
+  }
 }
 
 resource "aws_route_table_association" "private" {
