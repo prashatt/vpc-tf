@@ -22,3 +22,20 @@ variable "azs" {
   type    = list(string)
   default = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
+
+variable "instance_type" {
+  type    = string
+  default = "t2.micro"
+}
+
+variable "key_pair_name" {
+  description = "Name of the key pair"
+  type        = string
+  default     = "nginx-ssh-key"
+}
+
+variable "file_name" {
+  description = "Name of the key pair file"
+  type        = string
+  default     = "nginx-ssh-key.pem"
+}
